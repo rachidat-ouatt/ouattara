@@ -1,0 +1,352 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+
+
+}
+.container
+{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: repeat(2,1fr) 3fr 1fr;
+    grid-auto-columns: 4fr 2fr;
+    grid-template-areas: 
+
+                  "header header"
+                  "article article"
+                  "section aside"
+                  "footer footer";     
+} 
+aside
+{
+    grid-area: aside;
+  
+}
+article
+{
+    background-color: red;
+    grid-area: article;
+ 
+}
+section{
+    background-color: rgb(227, 234, 227);
+    grid-area: section;
+}
+footer{
+    background-color: brown;
+    grid-area: footer;
+    font-family: "Poppins", serif;
+}
+
+/*************************HEADER***********************/
+header{
+    display: flex;
+    grid-area: header;
+    height: 100px;
+    background-color:#000;
+    color: rgb(30, 130, 143); 
+    justify-content:space-around;
+    align-items: center; 
+} 
+img{
+   height: 50px;
+   border-radius: 50px;
+}
+.imag{
+    height: 50px;
+    border-radius: 50px;
+ }
+ul{
+    display: flex; 
+    list-style: none;
+}
+nav ul li a { 
+    text-decoration:none;
+    padding: 20px; 
+}
+ul li a
+{
+  color: blanchedalmond;
+   
+} 
+
+/****************************************SECTION**************************************************/ 
+section {
+    width: 100%;
+    height: 400px;
+    overflow: hidden; /* Cache tout ce qui dépasse */
+    background-color: #efe8e8; /* Fond clair */
+    padding: 10px 0;
+    position: relative;
+}
+
+/* Container pour les images à faire défiler */
+figure {
+    display: flex; /* Utilisation de flexbox pour aligner les images en ligne */
+    animation: scroll-left 15s linear infinite; /* Animation du défilement */
+}
+
+/* Style pour chaque image */
+figure img {
+    height: 300px; /* Ajuste la hauteur de l'image */
+    width: auto; /* Garde la proportion de l'image */
+    margin-right: 20px; /* Espacement entre les images */
+}
+
+/* Animation pour faire défiler les images de droite à gauche */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%); /* Commence à droite */
+    }
+    100% {
+        transform: translateX(-100%); /* Va à gauche */
+    }
+}
+/****************************************ASIDE**************************************************/ 
+aside {
+    height: 200px;
+    padding: 2px;
+    border-radius: 8px; /* Ajoute des coins arrondis */
+    background-color: #7b6021; /* Fond clair pour contraster */
+    text-align: center; /* Centre le texte */
+}
+
+.imd {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 50%; /* Image circulaire */
+    margin-bottom: 10px; /* Marge en dessous de l'image */
+}
+aside span {
+    text-decoration: underline;
+    font-family: "Lobster", serif; 
+    margin: 5px 0; /* Ajoute un espace entre les paragraphes */
+}
+
+aside p {
+    font-family: "Poppins", serif; 
+    margin: 5px 0; /* Ajoute un espace entre les paragraphes */
+}
+
+aside h3 {
+    font-family: "Bebas Neue", serif; /* Applique la même police au titre */
+    margin-bottom: 1px; /* Espacement sous le titre */
+    font-size: 25px;
+}
+
+
+
+
+
+/****************************************ARTICLE**************************************************/ 
+article
+{
+    display: grid;
+    justify-items: center;
+    border: 2px solid white;
+    border-radius: 20px 20px 20px 20px;
+    height: 50px;
+}
+.artt {
+    width: 100%;
+    overflow: hidden; /* Cache tout ce qui dépasse */
+    background-color: #7b6021; /* Couleur de fond */
+    padding: 10px 0;
+    position: relative;
+     border: 2px solid white;
+    border-radius: 20px 20px 20px 20px;
+}
+
+/* Le texte qui défile */
+.defilant {
+    display: inline-block;
+    white-space: nowrap; /* Empêche le texte de se briser sur plusieurs lignes */
+    animation: scroll-left 10s linear infinite; /* Animation du texte */
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+}
+
+/* Animation pour faire défiler le texte de droite à gauche */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%); /* Commence à droite */
+    }
+    100% {
+        transform: translateX(-100%); /* Va à gauche */
+    }
+}
+/****************************************FOOTER**************************************************/
+
+.contfoot {
+    height: 230px;
+    background-color: #000;
+    padding: 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Pour espacer les éléments */
+    align-items: center;
+    flex-wrap: wrap;
+  /* Couleur uniforme de fond pour les deux blocs */
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.Inside {
+    height: 180px; /* Réduction de la hauteur */
+    width: 45%; /* Prend 45% de la largeur */
+    box-sizing: border-box;
+    padding: 10px;
+    color: rgb(199, 62, 62); /* Couleur du texte pour les contacts */
+}
+
+.reach {
+    font-size: 15px;
+    color: white; /* Couleur du texte */
+    margin-bottom: 20px;
+}
+
+.localis {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.localis .em {
+    width: 30px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(14, 2, 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.localis p {
+    font-size: 15px;
+}
+
+.line {
+    margin-top: 10px;
+}
+
+.posi {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 45%; /* Prend 45% de la largeur */
+    box-sizing: border-box;
+    color: white; /* Couleur du texte pour les réseaux sociaux */
+}
+
+
+.buttom {
+    width: 56px; /* Largeur par défaut */
+    height: 56px; /* Hauteur par défaut */
+    margin: 0 12px; /* Espacement */
+    border-radius: 20%; /* Coins arrondis */
+    overflow: hidden; /* Masque les débordements */
+    cursor: pointer; /* Curseur en main */
+    box-shadow: 0 4px 4px rgb(31, 30, 30);
+    transition: all 0.3s ease-in-out; /* Effet de transition */
+    display: flex; /* Flexbox pour centrer le contenu */
+    justify-content: center; /* Centrage horizontal */
+    align-items: center; /* Centrage vertical */
+    text-align: center; /* Alignement du texte */
+    text-decoration: none; /* Pas de soulignement pour le lien */
+    background-color: #4267B2; /* Couleur de fond pour Facebook */
+}
+
+.buttom:hover {
+    width: 100px;
+}
+
+.buttom i {
+    font-size: 24px;
+    color: white;
+}
+
+.buttom span {
+    font-size: 18px;
+    font-weight: 200;
+    margin-left: 10px;
+}
+
+
+.buttom:nth-child(1):hover {
+    background-color: #4267B2; /* Facebook */
+}
+
+.buttom:nth-child(2):hover {
+    background-color: #0088cc; /* Telegram */
+}
+
+.buttom:nth-child(3):hover {
+    background-color: #0A66BC; /* LinkedIn */
+}
+
+.butb {
+    text-align: center;
+
+    ; /* Couleur de fond différente pour le texte en bas */
+    padding: 5px 0;
+}
+
+.butb p {
+    color: rgb(249, 226, 106);
+    font-size: 10px;
+}
+@media (max-width: 530px) {
+    .container {
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: 1fr; /* Une seule colonne sur petits écrans */
+        grid-template-areas: 
+            "header"
+            "article"
+            "section"
+            "aside"
+            "footer";     
+    }
+     header, article, section, aside, footer {
+                padding: 2px; /* Ajout d'un peu de rembourrage */
+            }
+            section {
+                height: 230px;
+                 
+             }
+             aside {
+                height: 300px;
+                width: 800px; 
+            }
+                 aside .imd {
+                     width: 100px;
+                     height: 100px;
+             }
+        
+        footer {
+            height: 300px; }
+             
+            .buttom {
+                width: 150px; /* Largeur par défaut */
+                height: 10px; /* Hauteur par défaut */
+                margin: 0 12px; /* Espacement */
+                
+            }
+                
+            }
+                
+           
+         
+    
+
+        

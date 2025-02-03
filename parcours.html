@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcours</title>
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+       
+        .conteneur {
+            background-color: bisque;
+            width: 65%;
+            height: 600px;
+            margin: 0 auto;
+            display: grid;
+            text-align: center;
+            font-family: "Bebas Neue", serif;
+            grid-template-columns: 200px 400px  400px;
+            grid-template-areas: 
+                "aside  section main"; 
+        }
+        aside {
+            grid-area: aside;
+            background-color: rgb(123, 73, 12);
+            color: white; /* Couleur du texte */
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Ombre pour un effet 3D */
+            text-align: center;
+        }
+        ul li a
+        {
+          color: rgb(232, 227, 222);
+           
+        } 
+        section {
+            grid-area: section;
+            background-color: rgb(69, 163, 197);
+           padding: 20px;
+           line-height: 20px;
+            
+           
+        }
+        main {
+            grid-area: main;
+            background-color: rgb(80, 221, 236);
+            padding: 20px;
+            line-height: 20px;
+        }
+        .toggle {
+         display: flex;
+          flex-direction: column; /* Aligne les éléments verticalement */
+          align-items: flex-end; /* Aligne les éléments à droite */
+        }
+        .toggle1 {
+         padding: 0 30px;
+        }
+
+         .plus {
+                 font-size: 20px; /* Taille de l'icône*/ 
+                 padding:   40px ; /* Espacement entre le symbole et la barre */
+            }
+            .not {
+                
+                font-weight: bold;    
+            }
+            .clas {
+                font-family: "Lobster", serif; 
+                font-weight: bold;    
+            }
+
+       .separator {
+                  height: 1px; /* Épaisseur de la barre */
+                 background-color: #160c0c; /* Couleur de la barre */
+                 width: 70%; /* Prend toute la largeur */
+                 margin: 10px 0; /* Espacement autour de la barre */
+                 } 
+
+
+                   /* Style pour le bouton */
+        #animatedButton {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            animation: moveButton 2s infinite;
+            transition: transform 0.3s ease;
+        }
+
+        @keyframes moveButton {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(20px); }
+            100% { transform: translateX(0); }
+        }
+
+        #animatedButton:active {
+            animation: none;
+            transform: scale(1.1);
+        }
+
+        
+       
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0, 0, 0, 0.5); 
+        }
+
+        .modal-content {
+            background-color: #fff; 
+            margin: 15% auto; 
+            padding: 20px; 
+            border: 1px solid #888; 
+            width: 80%; 
+            border-radius: 10px; 
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); 
+        }
+
+        .close {
+            color: #aaa; 
+            float: right; 
+            font-size: 28px; 
+            font-weight: bold; 
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black; 
+            text-decoration: none; 
+            cursor: pointer; 
+        }
+
+        .student-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .student-item {
+            display: flex;
+            align-items: center;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            width: calc(33% - 10px); /* 3 items per row */
+        }
+
+        .student-item img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%; /* Rendre les images rondes */
+            margin-right: 10px;
+        }
+       
+        div img {
+            width: 100px; /* Ajustez la taille de l'image */
+            height: auto;
+        }
+        /* Style pour le bouton de fermeture */
+        .close {
+            color: #aaa; /* Couleur grise */
+            float: right; /* Aligne à droite */
+            font-size: 28px; /* Taille de la police */
+            font-weight: bold; /* Gras */
+        }
+
+        .close:hover,
+        .close:focus {
+            color: red; /* Rouge au survol */
+            text-decoration: none; /* Pas de soulignement */
+            cursor: pointer; /* Curseur en forme de main */
+        }
+        ul {
+   padding: 30px;
+
+     }
+     ul {
+   list-style: none;
+
+     }
+     ul  li{
+   padding: 20px;
+   border:  1px solid white;
+   border-radius: 30%;
+
+     }
+        @media screen and (max-width: 530px) {
+            @media screen and (max-width: 530px) {
+    .conteneur {
+        
+        grid-template-columns: 140px 200px 200px;
+            grid-template-areas: 
+                "aside  section main"
+                ;  
+    } 
+    ul  li{
+   padding: 20px;
+   border:  1px solid white;
+   border-radius: 20%;
+   width: 40px;
+     } }
+
+}
+      
+           
+    </style>
+</head>
+<body>
+    <div class="conteneur">
+        <aside>
+            <h2>Menu</h2>
+                <ul>
+                    <li><a href="index.html">Acceuil</a> </li>
+                    <li><a href="diplome.html">Diplome</a> </li>
+                    <li><a href="profil.html">Profil</a> </li>
+                </ul>
+        </aside>
+
+        <section>
+            <span class="not">Parcours du primaire</span><span class="plus">+</span>
+            <div class="separator"></div > 
+           <div class="toggle1"--->
+            <p>
+                J'ai commencé le primaire en 2007 à l'école<br>
+                 primaireBouna 3 dans la ville de Bouna. <br>
+                 J'ai toujours été classée parmi les élèves<br>
+                  assidus et travailleuses, ce qui justifie<br>
+                 mon classement parmi les élèves ayant des<br>
+                  moyennes assez bonnes ou bien.
+                </p>
+                 </div ><br><br> <br>
+
+                <span class="not">Parcours du lycée</span><span class="plus">+</span>
+                <div class="separator"></div > 
+               <div class="toggle"--->
+                <p>
+                    
+                        C'est avec cet enthousiasme que j'obtiens<br>
+                        mon brevet du primaire.Ensuite, j'ai été orientée <br>
+                        au LYCEE MODERNE BOUNA.De la 6ème à la terminale 
+                        j'ai maintenu le même cap depuis le primaire.<br>
+                        C'est-à-dire que j'ai toujours eu des moyennes<br>
+                        assez bonnes ou bien.J'obtiens mon Brevet de 3ème<br>
+                        avec une très bonne note,ce qui a facilité mon<br> 
+                        affectation en seconde scientifique.De même, pour<br> 
+                        le baccalauréat, mes bonnes notes ont entraîné mon<br>
+                        orientation en sciences et technologie de Bouaké.  
+                 </p> </div >    
+        </section>
+        <main>
+            <span class="not">Parcours estudiantine</span><span class="plus">+</span>
+            <div class="separator"></div > 
+                <div class="toggle"--->
+            
+                <p>
+                    J'ai été orientée à l'Université Alassane Ouattara 
+                    de Bouaké en Mathématiques et Informatique.<br>
+                    C'est un choix de filière que j'ai fait, mais pas de ville.<br> 
+                    Heureuse,J'ai été choisie pour faire partie de la
+                     1ère promotion.Cela nous a favoriser beaucoup <br>
+                    de faveurs et beaucoup d'effort. Cette promotion est <br>
+                    d'ailleurs à féliciter avec tout le corps administratif <br>
+                    pour le travail abattu. Parmi ces faveurs, il y avait <br>
+                    des formations dans des domaines comme la géologie,<br>
+                     la biologie, des dons etc.Après mon admission en<br>
+                    deuxième année, j'ai été admise en licence<br>
+                    d'Informatique, et jusqu'à présent, je demeure une <br>
+                    étudiante en Master d'informatique au sein de l'université.
+                </p><br><br>
+                <p class="clas">
+                Notre master est à sa deuxième promotion et nous sommes moins de 10 étudiants.
+                 Pour plus d'informations  sur les étudiants de ma promotion<br><br>
+                 <button id="animatedButton">Listes de classe</button>
+
+                 <div id="myModal" class="modal">
+                     <div class="modal-content">
+                         <span class="close" onclick="closeModal()">&times;</span>
+                         <h2>Liste des élèves</h2>
+                         <div class="student-list">
+                             <div class="student-item">
+                                 <img src="images/ck.jpeg" alt="KANGA CLAVER KOUADIO KOUASSI">
+                                 <a href="https://claver0575901034.github.io/kangaclaver_moncv/">KANGA CLAVER KOUADIO KOUASSI</a>
+                             </div>
+                             <div class="student-item">
+                                 <img src="images/neh.jpeg" alt="MARE MARIE OUFFOUE MATINE">
+                                 <a href="https://marie125.github.io/marecv/">MARE MARIE OUFFOUE MATINE</a>
+                             </div>
+                             <div class="student-item">
+                                 <img src="images/kara.jpeg" alt="KARAMOKO VAFLE">
+                                 <a href="https://claver0575901034.github.io/karavaflecv/">KARAMOKO VAFLE</a>
+                             </div>
+                             <div class="student-item">
+                                 <img src="images/fab.jpeg" alt="ZAHOULY BI FABRICE">
+                                 <a href="https://fabioporfolio.onrender.com/">ZAHOULY BI FABRICE</a>
+                             </div>
+                             <div class="student-item">
+                                 <img src="images/neh.jpeg" alt="KAYA NEH ANGES">
+                                 <a href="https://karasite48.github.io/moncv/">KAYA NEH ANGES</a>
+                             </div>
+                             <div class="student-item">
+                                 <img src="images/dio.jpeg" alt="DIOMANDE ALHASSANE">
+                                 <a href="https://alhassanedio.github.io/diomande/">DIOMANDE ALHASSANE</a>
+                             </div>
+                             <div class="student-item">
+                                 <img src="images/img0.png" alt="OUATTARA RACHIDATOU">
+                                 <a href="">OUATTARA RACHIDATOU</a>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+
+                </p>
+                </main>
+                
+    <script>
+
+document.getElementById('animatedButton').addEventListener('click', function() {
+            openModal();
+        });
+
+        function openModal() {
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        // Fermer la modale en cliquant en dehors
+        window.onclick = function(event) {
+            const modal = document.getElementById("myModal");
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+    </script>   
+      
+</body>
+</html>

@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SITE</title>
-   
     <link rel="stylesheet" href="styllera.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -15,7 +15,7 @@
         <header>
             <img class="imag" src="images/img0.png" alt="logo">   
            
-            <nav>
+            <nav class="liet">
                 <ul>
                     <li><a href="profil.html"> PROFILS</a></li>
                     <li><a href="parcours.html">PARCOURS</a></li>
@@ -23,7 +23,7 @@
         
                 </ul>
           </nav> 
-          <img src="images/télécharger.jpeg" alt="logouao">     
+          <img class="ima" src="images/télécharger.jpeg" alt="logouao">     
        </header>
         <section>
                 <figure>
@@ -77,18 +77,18 @@
                     <h3>Joingnables sur</h3>
                     <div class="buttom">
                         <div class="socials">
-                            <a href="https://www.facebook.com/OUATTARA RACHIDATOU" target="_blank" > 
+                            <a href="https://www.facebook.com/" target="_blank" > 
                                 <i class="fa-brands fa-facebook"></i>
-                                <span>Facebook</span>
+                               
                             </a>
                         </div>
                         
                     </div>
                     <div class="buttom">
                         <div class="socials">
-                            <a href="https://t.me/OUATTARA RACHIDATOU" target="_blank" >
+                            <a href="https://t.me/" target="_blank" >
                                 <i class="fa-brands fa-telegram"></i>
-                            <span>Telegram</span>
+                            
                         </a>
                         
 
@@ -98,9 +98,9 @@
                     </div>
                     <div class="buttom">
                         <div class="socials">
-                            <a href="https://www.linkedin.com/in/rachidatou675@gmail.com" target="_blank" >
+                            <a href="https://www.linkedin.com/" target="_blank" >
                                 <i class="fa-brands fa-linkedin"></i>
-                                <span>LinkedIn</span>
+                                
                             </a>
                             
                            
@@ -116,4 +116,21 @@
             </div>
         </div>
     </footer>
+    <script>
+        const ent = document.querySelectorAll('.imag');
+        
+        const btns = document.querySelectorAll('.liet');
+       
+
+        window.addEventListener('load', () => {
+            const TL = gsap.timeline({paused: true});
+            TL.staggerFrom(ent, 1, {bottom: -10, opacity: 0, ease: "power2.out"}, 0.7);
+           
+            TL.staggerFrom(btns, 1, {top: -50, opacity: 0, ease: "power2.out"}, 0.7);
+  
+            TL.play();
+        });
+    </script> 
+</body>
+</html>    
     

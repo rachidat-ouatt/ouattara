@@ -334,11 +334,11 @@ article
              }
         
         footer {
-            height: 300px; }
+             }
              
             .buttom {
-                width: 150px; /* Largeur par défaut */
-                height: 10px; /* Hauteur par défaut */
+                width: 80px; /* Largeur par défaut */
+                height: 40px; /* Hauteur par défaut */
                 margin: 0 12px; /* Espacement */
                 
             }
